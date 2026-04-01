@@ -540,34 +540,9 @@
       <div class="upload-icon">&#128196;</div>
       <div class="upload-title">Send Files to RampFuel</div>
       <div class="upload-sub">Upload documents, assets, or any files<br>related to your engagement.</div>
-      <button class="btn-upload" onclick="openUploadModal()">
+      <a class="btn-upload" href="https://rampfuel.egnyte.com/ul/PVfpYK9WEv" target="_blank" rel="noopener">
         &#8679;&nbsp; Upload Files
-      </button>
-    </div>
-  </div>
-
-  <!-- Upload Modal -->
-  <div class="modal-overlay" id="uploadModal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <span>&#128196; Send Files to RampFuel</span>
-        <button class="modal-close" onclick="closeUploadModal()">&#10005;</button>
-      </div>
-      <iframe
-        id="egnyteModalFrame"
-        class="modal-iframe"
-        src="https://rampfuel.egnyte.com/ul/PVfpYK9WEv"
-        onload="onModalLoad(this)"
-        onerror="showModalFallback()"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-        title="Upload Files"
-      ></iframe>
-      <div class="modal-fallback" id="modalFallback">
-        <p>The upload form could not load inline.<br>Click below to open it directly.</p>
-        <a class="btn-egnyte-link" href="https://rampfuel.egnyte.com/ul/PVfpYK9WEv" target="_blank" rel="noopener">
-          &#8679; Open Upload Form
-        </a>
-      </div>
+      </a>
     </div>
   </div>
 
