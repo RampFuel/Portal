@@ -808,35 +808,8 @@
   }
 
   // ─────────────────────────────────────────────────────────────
-  // Egnyte
+  // Egnyte — opens upload link in new tab (see Files tab anchor)
   // ─────────────────────────────────────────────────────────────
-  function openUploadModal() {
-    document.getElementById("uploadModal").classList.add("open");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeUploadModal() {
-    document.getElementById("uploadModal").classList.remove("open");
-    document.body.style.overflow = "";
-  }
-
-  function onModalLoad(frame) {
-    try {
-      const doc = frame.contentDocument || frame.contentWindow.document;
-      if (!doc || !doc.body || doc.body.innerHTML.trim() === "") showModalFallback();
-    } catch(e) { showModalFallback(); }
-  }
-
-  function showModalFallback() {
-    document.getElementById("egnyteModalFrame").style.display = "none";
-    const fb = document.getElementById("modalFallback");
-    fb.style.display = "flex";
-  }
-
-  // Close modal on overlay click
-  document.getElementById("uploadModal").addEventListener("click", function(e) {
-    if (e.target === this) closeUploadModal();
-  });
 
   // ─────────────────────────────────────────────────────────────
   // Submit ticket
