@@ -784,12 +784,12 @@
     btn.textContent = "Marking...";
 
     try {
-      await fetch(HOOK_COMPLETE, {
+      const res = await fetch(`${WORKER_URL}/complete`, {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ task_gid: taskGid })
       });
+      if (!res.ok) throw new Error(`Worker returned ${res.status}`);
 
       allTasks = allTasks.map(t =>
         t.gid === taskGid ? { ...t, completed: true, completed_at: new Date().toISOString() } : t
